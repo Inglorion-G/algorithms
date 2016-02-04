@@ -1,0 +1,17 @@
+{
+  "name": "javascript_algorithms",
+  "version": "1.0.0",
+  "description": "JavaScript implementations of foundational algorithms",
+  "main": "linear_search.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "nodeunit": "^0.9.1"
+  },
+  "keywords": [
+    "algorithms"
+  ],
+  "author": "George Groh",
+  "license": "ISC"
+}
