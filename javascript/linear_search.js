@@ -106,9 +106,69 @@ function recursiveLinearSearch(arr, n, i, x) {
     }
 }
 
+/*
+    Iterative Binary Search
+    Inputs --
+        arr: an array
+        n: the number of elements in arr
+        x: the target being searched for
+    Output --
+        Either the index i for which A[i] === x or null
+    Complexity --
+        O(log n)
+*/
+
+function iterativeBinarySearch(arr, n, x) {
+    var left  = 0,
+        right = n;
+
+    while (left <= right) {
+        var mid = Math.floor((left + right) / 2);
+        if (arr[mid] === x) {
+            return mid;
+        } else if (arr[mid] > x) {
+            right = mid - 1;
+        } else {
+            left = mid + 1;
+        }
+    }
+
+    return null;
+}
+
+/*
+    Recursive Binary Search
+    Inputs --
+        arr: an array
+        left: the left index of the subarray
+        right: the right index of the subarray
+        x: the target being searched for
+    Output --
+        Either the index i for which A[i] === x or null
+    Complexity --
+        O(log n)
+*/
+
+function recursiveBinarySearch(arr, left, right, x) {
+    if (left > right) {
+        return null;
+    }
+
+    var mid = Math.floor((left + right) / 2);
+    if (arr[mid] === x) {
+        return mid;
+    } else if (arr[mid] > x) {
+        return recursiveBinarySearch(arr, left, mid - 1, x);
+    } else {
+        return recursiveBinarySearch(arr, mid + 1, right, x);
+    }
+}
+
 module.exports = {
     naiveLinearSearch: naiveLinearSearch,
     betterLinearSearch: betterLinearSearch,
     sentinelLinearSearch: sentinelLinearSearch,
-    recursiveLinearSearch: recursiveLinearSearch
+    recursiveLinearSearch: recursiveLinearSearch,
+    iterativeBinarySearch: iterativeBinarySearch,
+    recursiveBinarySearch: recursiveBinarySearch
 };
