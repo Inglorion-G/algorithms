@@ -1,5 +1,4 @@
-var nodeunit        = require('nodeunit'),
-    linearSearch    = require('../linear_search'),
+var linearSearch    = require('../linear_search'),
     testArray       = [3, 5, 7, 1, 8, 9, 1, 2, 8, 9, 3, 4, 1, 5],
     length          = testArray.length;
 
